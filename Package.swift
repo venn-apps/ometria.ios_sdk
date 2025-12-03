@@ -5,20 +5,25 @@ import PackageDescription
 
 let package = Package(
     name: "Ometria",
-    platforms: [.iOS(.v15)],
+    platforms: [
+        .iOS(.v15)
+    ],
     products: [
         .library(
             name: "Ometria",
             targets: ["Ometria"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", exact: "12.6.0")
+        .package(
+            url: "https://github.com/firebase/firebase-ios-sdk.git",
+            from: "12.6.0"
+        )
     ],
     targets: [
         .target(
             name: "Ometria",
             dependencies: [
-                .product(name: "FirebaseMessaging", package: "Firebase")
-                ]),
+                .product(name: "FirebaseMessaging", package: "firebase-ios-sdk")
+            ]),
     ]
 )
