@@ -1,20 +1,18 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "Ometria",
-    platforms: [.iOS(.v11)],
+    platforms: [.iOS(.v15)],
     products: [
         .library(
             name: "Ometria",
             targets: ["Ometria"]),
     ],
     dependencies: [
-        .package(name: "Firebase",
-                 url: "https://github.com/firebase/firebase-ios-sdk.git",
-                 "10.10.0"..<"11.0.0")
+        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", exact: "12.6.0")
     ],
     targets: [
         .target(
